@@ -1,22 +1,20 @@
-// import Product from './components/product'
+import React from 'react';
 import './App.css';
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom';
 import Dashboard from './components/dashboard';
 import Cart from './components/cart';
 import RootLayout from './components/rootLayout';
-function App() {
 
+function App() {
   const router = createBrowserRouter(createRoutesFromElements(
-    
-    <Route path="/" element={< RootLayout />}>
-      <Route index element = {<Dashboard />}></Route>
-      <Route path="/Cart" element = {<Cart/>}></Route>
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Dashboard />} />
+      <Route path="/Cart" element={<Cart />} />
     </Route>
-  ))
+  ));
+
   return (
-    <div>
-     <RouterProvider router={router}/>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
